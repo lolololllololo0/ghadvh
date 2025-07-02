@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ghadvh Games</title>
+  <link rel="icon" href="https://wallpapers.com/images/hd/hand-drawn-star-vector-png-eyc64-y1liyxm00tcphemg.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f8f0fc;
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+      height: 100vh;
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      z-index: -1;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 4s infinite alternate;
+      box-shadow:
+        0 0 6px 2px white,
+        0 0 10px 4px #e9e77e;
+    }
+
+    .star.small {
+      width: 2px;
+      height: 2px;
+      animation-duration: 3s;
+    }
+
+    .star.medium {
+      width: 3px;
+      height: 3px;
+      animation-duration: 4.5s;
+    }
+
+    .star.large {
+      width: 4px;
+      height: 4px;
+      animation-duration: 6s;
+    }
+
+    @keyframes twinkle {
+      0% {opacity: 0.2;}
+      100% {opacity: 1;}
+    }
+
+    .header {
+      background-color: #ede7f6;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #d1c4e9;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: bold;
+      color: #5e35b1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ce93d8;
+      margin: 30px 0 10px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .game-box {
+      background: #ffffff;
+      border: 2px solid #ce93d8;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(94, 53, 177, 0.25);
+      transition: transform 0.2s, box-shadow 0.3s;
+      text-align: center;
+      color: #333;
+    }
+
+    .game-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(94, 53, 177, 0.35);
+    }
+
+    .game-box a {
+      display: block;
+      margin: 10px 0;
+      color: #7b1fa2;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .checkbox-label {
+      font-size: 14px;
+      display: block;
+      margin-top: 10px;
+      color: #4a148c;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      accent-color: #7b1fa2;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+
+  <div class="header">
+    <div class="logo-container">
+      <img src="https://cdn.discordapp.com/attachments/1385266687611506771/1389627136930877440/IMG_3741.png?ex=6866a01f&is=68654e9f&hm=d765680b9ba942c6e896dd6ab0449abd36c72d3601b1363625b751b8967e867e&" alt="Logo" />
+      <div class="logo-text">Ghadvh</div>
+    </div>
+  </div>
+
+  <h1>Daily Games</h1>
+
+  <div class="game-container">
+
+    <div class="game-box">
+      Wordle
+      <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'wordle')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Sudoku
+      <a href="https://www.nytimes.com/puzzles/sudoku" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'sudoku')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Kalimat
+      <a href="https://kalimatapp.com/classic" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'kalimat')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Globle
+      <a href="https://globle.org/" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'globle')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Flagle
+      <a href="https://www.flagle.io/" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'flagle')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Framed1
+      <a href="https://framedgame.io/" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'framed')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Worldle
+      <a href="https://worldle.teuteuf.fr/" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'worldle')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Bandle
+      <a href="https://bandle.app/daily" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'bandle')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Faces
+      <a href="https://faces.wtf/" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'faces')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Spotle
+      <a href="https://spotle.io/" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'spotle')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Waffle
+      <a href="https://wafflegame.net/daily" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'waffle')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Framed2
+      <a href="https://framed.wtf/" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'framedwtf')" /> Success!
+      </label>
+    </div>
+
+    <div class="game-box">
+      Crosstune
+      <a href="https://crosstune.io/" target="_blank">Play Game</a>
+      <label class="checkbox-label">
+        <input type="checkbox" onchange="saveProgress(this, 'crosstune')" /> Success!
+      </label>
+    </div>
+
+  </div>
+
+  <script>
+    const starsContainer = document.getElementById('stars');
+
+    function randomRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function createStar() {
+      const star = document.createElement('div');
+      star.classList.add('star');
+
+      const sizeClass = ['small', 'medium', 'large'][Math.floor(Math.random() * 3)];
+      star.classList.add(sizeClass);
+
+      star.style.top = randomRange(0, 100) + 'vh';
+      star.style.left = randomRange(0, 100) + 'vw';
+
+      star.style.animationDuration = (randomRange(2, 6)).toFixed(2) + 's';
+
+      starsContainer.appendChild(star);
+    }
+
+    for(let i = 0; i < 100; i++) {
+      createStar();
+    }
+
+    function saveProgress(checkbox, gameName) {
+      localStorage.setItem(gameName, checkbox.checked);
+    }
+
+    window.onload = function() {
+      const games = [
+        'wordle', 'sudoku', 'kalimat', 'globle', 'flagle',
+        'framed', 'worldle', 'bandle', 'faces', 'spotle',
+        'waffle', 'framedwtf', 'crosstune'
+      ];
+      games.forEach(game => {
+        const checked = localStorage.getItem(game) === 'true';
+        const checkbox = document.querySelector(`input[onchange*="${game}"]`);
+        if (checkbox) checkbox.checked = checked;
+      });
+    };
+  </script>
+
+</body>
+</html>
