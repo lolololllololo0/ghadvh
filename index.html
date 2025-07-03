@@ -308,6 +308,23 @@
         const checkbox = document.querySelector(`input[onchange*="${game}"]`);
         if (checkbox) checkbox.checked = checked;
       });
+
+          const today = new Date().toDateString();
+    const lastVisit = localStorage.getItem('lastVisitDate');
+
+    if (lastVisit !== today) {
+
+      const games = [
+        'wordle', 'sudoku', 'kalimat', 'globle', 'flagle',
+        'framed1', 'worldle', 'bandle', 'faces', 'spotle',
+        'waffle', 'framed2', 'crosstune'
+      ];
+      games.forEach(game => {
+        localStorage.setItem(game, 'false');
+      });
+
+      localStorage.setItem('lastVisitDate', today);
+    }
     };
   </script>
 
